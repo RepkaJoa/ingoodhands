@@ -1,0 +1,23 @@
+.box {
+  background-color: $color-yellow;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 50%;
+  padding: 5%;
+  &_number {
+  color: $color-brown;
+  font-size: 4rem;
+    padding: 10px;
+    margin-top: 3%;
+  }
+  &_header {
+    margin-top: 1%;
+    color: #3C3C3C;
+
+  }
+  &_description {
+    margin-top: 5%;
+    text-align: center;
+  }
+}

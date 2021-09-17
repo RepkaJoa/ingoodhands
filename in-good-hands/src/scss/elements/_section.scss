@@ -1,0 +1,30 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  &_one {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+  }
+  &_two {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 2%;
+  }
+}
+.section_row {
+  display: flex;
+  flex-direction: row;
+
+}
+.section_column {
+  display: flex;
+  flex-direction: column;
+}
