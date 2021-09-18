@@ -7,7 +7,7 @@ import HeadMain from "./HeadMain";
 
 export default function SectionHead(){
     return <>
-    <div className={"section_row container"}>
+    <div id={"start"} className={"section_row container"}>
         <HeadBackground/>
         <div className={"header_info"}>
         <HeadNaviUp/>

@@ -6,8 +6,7 @@ import Button from "./Button";
 export default function HeadMain(){
     return <>
         <div className={"header_info section"}>
-            <Heading head_text={"Zacznij pomagać!"  +
-            " Oddaj niechciane rzeczy w zaufane ręce"} />
+            <Heading head_text={"Zacznij pomagać!\nOddaj niechciane rzeczy w zaufane ręce"} />
 
         <div className={"section_two"}>
             <Link to={"/login"} className={"link"}> <Button text={"Oddaj rzeczy"}/></Link>

@@ -4,7 +4,7 @@ import Box from "./Box";
 export default function SectionYellow(){
 
     return <>
-        <div className={ "section_row"}>
+        <div className={ "section_row yellow_background"}>
         <Box number={"10"}
          header={"ODDANYCH WORKÓW"}
          description={"Lorem ipsum dolor sit amet, consectetur adipisc Pellentesque " +
