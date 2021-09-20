@@ -11,7 +11,7 @@ export default function SectionFourSteps(){
 <div id="4steps" className={"four_steps_container"}>
     <Heading head_text={"Wystarczą 4 proste kroki"}/>
     <FourSteps/>
-    <Link to={"./login"} className={"link center"}><Button text={"ODDAJ RZECZY"}/></Link>
+    <Link to={"./login"} className={"link center"}><Button text={"ODDAJ \n RZECZY"}/></Link>
 </div>
 
     </>

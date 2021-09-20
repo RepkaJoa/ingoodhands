@@ -9,8 +9,8 @@ export default function HeadMain(){
             <Heading head_text={"Zacznij pomagać!\nOddaj niechciane rzeczy w zaufane ręce"} />
 
         <div className={"section_two"}>
-            <Link to={"/login"} className={"link"}> <Button text={"Oddaj rzeczy"}/></Link>
-            <Link to={"/login"} className={"link"}>  <Button text={"Zorganizuj Zbiórkę"}/></Link>
+            <Link to={"/login"} className={"link"}> <Button text={"Oddaj \n rzeczy"}/></Link>
+            <Link to={"/login"} className={"link"}>  <Button text={"Zorganizuj \n Zbiórkę"}/></Link>
         </div>
         </div>
     </>

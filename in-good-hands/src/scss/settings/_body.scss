@@ -25,4 +25,20 @@ body {
   margin: 2%;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
+.left{
+  display: flex;
+  justify-content: left;
+  align-items: start;
+}
+.right {
+
+
+}
+.space_between{
+  display: flex;
+  justify-content: space-between;
+
+}
+

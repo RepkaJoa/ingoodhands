@@ -1,0 +1,32 @@
+.about_background{
+  width: 50%;
+  height: auto;
+  background-image: url("../../assets/People.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  //background-position:90%;
+}
+.signature {
+  width: 5rem;
+  height: 4rem;
+  background-image: url("../../assets/Signature.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  align-self: flex-end;
+  order: 0;
+  flex: 0 1 auto;
+
+}
+.section_about {
+  width: 50%;
+  height: 25rem;
+  padding: 10%;
+}
+
+.about_text {
+  font-size: 1rem;
+  line-height: 2rem;
+  margin-top: 15%;
+  text-align: center;
+  height: 50%;
+}

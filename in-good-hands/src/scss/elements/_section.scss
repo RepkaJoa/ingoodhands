@@ -2,14 +2,14 @@
   display: flex;
   flex-direction: column;
 
-
   &_one {
     width: 100%;
-    height: 50%;
+
     display: flex;
     flex-direction: column;
     align-items: center;
   }
+
   &_two {
     width: 100%;
     display: flex;
@@ -17,13 +17,26 @@
     justify-content: space-around;
     margin-top: 2%;
   }
-}
-.section_row {
-  display: flex;
-  flex-direction: row;
 
-}
-.section_column {
-  display: flex;
-  flex-direction: column;
+
+
+  &_row {
+    display: flex;
+    flex-direction: row;
+
+
+  }
+
+  &_column {
+    display: flex;
+    flex-direction: column;
+
+  }
+ &_about {
+   height:100%;
+   width: 100%;
+   &_text {
+     width: 50%;
+   }
+ }
 }
