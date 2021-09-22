@@ -1,0 +1,118 @@
+{
+  "fundations": [
+    {
+      "id": 1 ,
+      "name": "Fundacja 1",
+      "description": "Cel 1",
+      "items": "1,2,3"
+    },
+    {
+      "id": 2 ,
+      "name": "Fundacja 2",
+      "description": "Cel 2",
+      "items": "1,2,3"
+    },
+    {
+      "id": 3 ,
+      "name": "Fundacja 3",
+      "description": "Cel 3",
+      "items": "1,2,3"
+    },
+    {
+      "id": 4 ,
+      "name": "Fundacja 4",
+      "description": "Cel 1",
+      "items": "1,2,3"
+    },
+    {
+      "id": 5 ,
+      "name": "Fundacja 5",
+      "description": "Cel 2",
+      "items": "1,2,3"
+    },
+    {
+      "id": 6 ,
+      "name": "Fundacja 6",
+      "description": "Cel 3",
+      "items": "1,2,3"
+    },
+    {
+      "id": 7 ,
+      "name": "Fundacja 7",
+      "description": "Cel 1",
+      "items": "1,2,3"
+    },
+    {
+      "id": 8 ,
+      "name": "Fundacja 8",
+      "description": "Cel 2",
+      "items": "1,2,3"
+    },
+    {
+      "id": 9 ,
+      "name": "Fundacja 9",
+      "description": "Cel 3",
+      "items": "1,2,3"
+    }
+  ],
+
+  "organizations": [
+    {
+      "id": 1 ,
+      "name": "Organizacja 1",
+      "description": "Cel 1",
+      "items": "1,2,3"
+    },
+    {
+      "id": 2 ,
+      "name": "Organizacja 2",
+      "description": "Cel 2",
+      "items": "1,2,3"
+    },
+    {
+      "id": 3 ,
+      "name": "Organizacja 3",
+      "description": "Cel 3",
+      "items": "1,2,3"
+    },
+    {
+      "id": 4 ,
+      "name": "Organizacja 4",
+      "description": "Cel 1",
+      "items": "1,2,3"
+    },
+    {
+      "id": 5 ,
+      "name": "Organizacja 5",
+      "description": "Cel 2",
+      "items": "1,2,3"
+    },
+    {
+      "id": 6 ,
+      "name": "Organizacja 6",
+      "description": "Cel 3",
+      "items": "1,2,3"
+    }
+
+  ],
+  "locals": [
+    {
+      "id": 1 ,
+      "name": "Lokalne zbiórki 1",
+      "description": "Cel 1",
+      "items": "1,2,3"
+    },
+    {
+      "id": 2 ,
+      "name": "Lokalne zbiórki 2",
+      "description": "Cel 2",
+      "items": "1,2,3"
+    },
+    {
+      "id": 3 ,
+      "name": "Lokalne zbiórki 3",
+      "description": "Cel 3",
+      "items": "1,2,3"
+    }
+  ]
+}

@@ -1,11 +1,16 @@
 import React from "react";
 
-export default function Pages(){
+export default function Pages({numbers, handle}){
+
+
 
     return<>
     <ul className={"section_row center"}>
-        <li className={"menu_down"}>1</li>
-        <li className={"menu_down"}>2</li>
+        {
+            numbers.map((el,index)=> {
+                return <li onClick={()=> handle(el)} id={el} key={index} className={"menu_down"}>{el}</li>
+            })
+        }
     </ul>
     </>
 }
