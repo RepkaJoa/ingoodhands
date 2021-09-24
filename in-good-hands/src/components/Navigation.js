@@ -9,52 +9,27 @@ export default function Navigation(){
     const [fundations, setFundations] = useState([]);
     const [organizations, setOrganizations] = useState([]);
     const [locals, setLocals] = useState([]);
-
+    const [list, setList] = useState([]);
     useEffect(() => {
         setLoading(true);
-        fetch(`${API}/fundations`)
+        fetch(`${API}/db`)
             .then(response => response.json())
             .then(data => {
-                setFundations(data);
+                setFundations(data.fundations);
+                setOrganizations(data.organizations);
+                setLocals(data.locals);
                 setLoading(false);
+                setList(data.fundations);
             })
             .catch(error => {
                 console.log(error);
             });
     }, []);
 
-    useEffect(() => {
-        setLoading(true);
-        fetch(`${API}/organizations`)
-            .then(response => response.json())
-            .then(data => {
-                setOrganizations(data);
-                setLoading(false);
-            })
-            .catch(error => {
-                console.log(error);
-            });
-    }, []);
-
-    useEffect(() => {
-        setLoading(true);
-        fetch(`${API}/locals`)
-            .then(response => response.json())
-            .then(data => {
-                setLocals(data);
-                setLoading(false);
-            })
-            .catch(error => {
-                console.log(error);
-            });
-    }, []);
 
 
     const [text, setText]=useState("W naszej bazie znajdziesz listę zweryfikowanych Fundacji,\n z którymi współpracujemy. " +
         "Możesz sprawdzić czym się zajmują,\n komu pomagają i czego potrzebują.");
-
-    const [list, setList] = useState(fundations);
-    console.log(list);
 
     const [currentPage, setCurrentPage]=useState(1);
     const [listItemsPerPage, setListItemsPerPage] = useState(3);
@@ -62,19 +37,18 @@ export default function Navigation(){
     const indexOfLastListItem = currentPage * listItemsPerPage;
     const indexOfFirstListItem = indexOfLastListItem - listItemsPerPage;
     const currentListItem = list.slice(indexOfFirstListItem, indexOfLastListItem);
+
     const handleNav = e => {
         e.preventDefault();
 
-        if (e.target.id == 1) {
+
+        if (parseInt(e.target.id) === 1) {
 
             setText("W naszej bazie znajdziesz listę zweryfikowanych Fundacji, \n z którymi współpracujemy. " +
                 "Możesz sprawdzić czym się zajmują, \n komu pomagają i czego potrzebują.");
-
             setList(fundations);
 
-
-
-        } else if (e.target.id == 2) {
+        } else if (parseInt(e.target.id) === 2) {
             setText("Lorem ipsum dolor sit amet, consectetur adipiscing elit, \n sed do eiusmod tempor incididunt " +
                 "ut labore et dolore magna aliqua. \n Ut enim ad minim veniam, quis nostrud exercitation.");
             setList(organizations);
@@ -83,7 +57,8 @@ export default function Navigation(){
                 "\n Ut enim ad minim veniam, quis nostrud exercitation.");
             setList(locals);
         }};
-        // change page
+
+    // change page
 
         const paginate = (pageNumber) => {
             setCurrentPage(pageNumber);
@@ -93,7 +68,7 @@ export default function Navigation(){
 
     return <>
     <div className={"section_column"}>
-        <ul className={"section_row center"}>
+        <ul  className={"section_row center"}>
             <li onClick={handleNav} id={1} className={"menu_down"}>Fundacjom</li>
             <li onClick={handleNav} id={2} className={"menu_down"}>Organizacjom <br/> pozarządowym</li>
             <li onClick={handleNav} id={3} className={"menu_down"}>Lokalnym <br/> zbiórkom</li>
