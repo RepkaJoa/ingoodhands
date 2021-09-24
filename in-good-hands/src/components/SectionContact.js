@@ -3,11 +3,11 @@ import Heading from "./Heading";
 
 export default function SectionContact(){
     return <>
-        <div className={"section_row"}>
-            <div className={"contact_background"}>
+        <div id={"contact"} className={"section_row"}>
+            <div className={"contact_background section_two"}>
 
             </div>
-            <div className={"contact_form"}>
+            <div className={"contact_form section_two"}>
                 <form>
                     <Heading head_text={"Skontaktuj się z Nami"}/>
                     <input type={"text"}/>

@@ -1,38 +1,48 @@
 import React, {useState, useEffect} from "react";
 import Paragraf from "./Paragraf";
-import List from "./List";
+import ListPagination from "./ListPagination";
 import Pages from "./Pages";
 
 export default function Navigation(){
+    const [loading, setLoading] = useState(false);
     const API = "http://localhost:4000";
-    const [fundations, setFundations] = useState([])
+    const [fundations, setFundations] = useState([]);
+    const [organizations, setOrganizations] = useState([]);
+    const [locals, setLocals] = useState([]);
+
     useEffect(() => {
+        setLoading(true);
         fetch(`${API}/fundations`)
             .then(response => response.json())
             .then(data => {
-                setFundations(data)
+                setFundations(data);
+                setLoading(false);
             })
             .catch(error => {
                 console.log(error);
             });
     }, []);
-    const [organizations, setOrganizations] = useState([])
+
     useEffect(() => {
+        setLoading(true);
         fetch(`${API}/organizations`)
             .then(response => response.json())
             .then(data => {
-                setOrganizations(data)
+                setOrganizations(data);
+                setLoading(false);
             })
             .catch(error => {
                 console.log(error);
             });
     }, []);
-    const [locals, setLocals] = useState([])
+
     useEffect(() => {
+        setLoading(true);
         fetch(`${API}/locals`)
             .then(response => response.json())
             .then(data => {
-                setLocals(data)
+                setLocals(data);
+                setLoading(false);
             })
             .catch(error => {
                 console.log(error);
@@ -40,56 +50,60 @@ export default function Navigation(){
     }, []);
 
 
+    const [text, setText]=useState("W naszej bazie znajdziesz listę zweryfikowanych Fundacji,\n z którymi współpracujemy. " +
+        "Możesz sprawdzić czym się zajmują,\n komu pomagają i czego potrzebują.");
 
-    const [text, setText]=useState("Text 1");
-    const [listItem, setListItem] = useState([]);
-    const [pages, setPages] = useState([1,2,3]);
-    const [pageSelected, setPageSelected] = useState("");
-    const handlePage = (el) => {
-        console.log(el)
-        setPageSelected(el);
-    }
+    const [list, setList] = useState(fundations);
+    console.log(list);
 
+    const [currentPage, setCurrentPage]=useState(1);
+    const [listItemsPerPage, setListItemsPerPage] = useState(3);
+// Get current list
+    const indexOfLastListItem = currentPage * listItemsPerPage;
+    const indexOfFirstListItem = indexOfLastListItem - listItemsPerPage;
+    const currentListItem = list.slice(indexOfFirstListItem, indexOfLastListItem);
     const handleNav = e => {
         e.preventDefault();
 
-    if (e.target.id == 1) {
+        if (e.target.id == 1) {
 
-        setText("Text 1 - Fundacje")
-        setPages([1,2,3])
-        console.log(pageSelected)
-        setListItem([fundations[0],fundations[1],fundations[2]])
+            setText("W naszej bazie znajdziesz listę zweryfikowanych Fundacji, \n z którymi współpracujemy. " +
+                "Możesz sprawdzić czym się zajmują, \n komu pomagają i czego potrzebują.");
+
+            setList(fundations);
 
 
 
-    }
-    else if  (e.target.id == 2)
-    {
-        setText("Text 2 - Organizacje")
-        setPages([1,2])
-        console.log(organizations)
-        setListItem([organizations[0],organizations[1],organizations[2]])
-    }
- else
-    {
-        setText("Text 3 - Lokalne zbiórki")
-        // setListItem(local_list)
-        setPages([ ])
-        console.log(locals)
-        setListItem([locals[0],locals[1],locals[2]])
-    }    ;
+        } else if (e.target.id == 2) {
+            setText("Lorem ipsum dolor sit amet, consectetur adipiscing elit, \n sed do eiusmod tempor incididunt " +
+                "ut labore et dolore magna aliqua. \n Ut enim ad minim veniam, quis nostrud exercitation.");
+            setList(organizations);
+        } else {
+            setText("Lorem ipsum dolor sit amet, consectetur adipiscing elit, \n sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
+                "\n Ut enim ad minim veniam, quis nostrud exercitation.");
+            setList(locals);
+        }};
+        // change page
 
-    }
+        const paginate = (pageNumber) => {
+            setCurrentPage(pageNumber);
+        };
+
+
+
     return <>
     <div className={"section_column"}>
-    <ul className={"section_row center"}>
-        <li onClick={handleNav} id={1} className={"menu_down"}>Fundacjom</li>
-        <li onClick={handleNav} id={2} className={"menu_down"}>Organizacjom <br/> pozarządowym</li>
-        <li onClick={handleNav} id={3} className={"menu_down"}>Lokalnym <br/> zbiórkom</li>
-    </ul>
-        <Paragraf text={text}/>
-        <List list_item={listItem}/>
-        <Pages numbers={pages} handle={handlePage}/>
+        <ul className={"section_row center"}>
+            <li onClick={handleNav} id={1} className={"menu_down"}>Fundacjom</li>
+            <li onClick={handleNav} id={2} className={"menu_down"}>Organizacjom <br/> pozarządowym</li>
+            <li onClick={handleNav} id={3} className={"menu_down"}>Lokalnym <br/> zbiórkom</li>
+        </ul>
+        <div className={"section_one"}>
+            <Paragraf text={text}/>
+            <ListPagination list={currentListItem} loading={loading}/>
+            { (list.length === listItemsPerPage) ? <div/> : <Pages listItemsPerPage={listItemsPerPage} totalListItems={list.length} paginate={paginate}/> }
+        </div>
+
 
     </div>
     </>

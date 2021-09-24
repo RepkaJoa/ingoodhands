@@ -1,0 +1,40 @@
+.list{
+  width: 100%;
+
+}
+.list_items {
+  width: 100%;
+  color: $color-grey;
+  position: relative;
+
+  &::after{
+    content: "";
+    width: 50%;
+    //margin-left: 36%;
+    height: 1px;
+    border-bottom: 1px solid $color-grey;
+    position: absolute;
+    top:150%;
+  }
+
+}
+.space {
+  margin-left:38%;
+  height: 10px;
+}
+.name_text {
+  font-size: 1rem;
+}
+.description_text {
+  font-size: 0.5rem;
+}
+paragraf_text {
+  width: 60%;
+  white-space: pre-line;
+  font-size: 1rem;
+  text-align: center;
+  margin-left: 10%;
+  margin-right: 10%;
+
+
+}

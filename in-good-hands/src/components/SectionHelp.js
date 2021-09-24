@@ -5,9 +5,10 @@ import Navigation from "./Navigation";
 
 export default function SectionHelp(){
     return <>
-        <div id={"fund_org"}>
         <Heading head_text={"Komu pomagamy?"}/>
-        <Navigation/>
+        <div id={"fund_org"} >
+
+        <Navigation />
 
         </div>
     </>
