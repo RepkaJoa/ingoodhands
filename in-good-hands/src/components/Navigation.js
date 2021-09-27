@@ -10,6 +10,8 @@ export default function Navigation(){
     const [organizations, setOrganizations] = useState([]);
     const [locals, setLocals] = useState([]);
     const [list, setList] = useState([]);
+    const [text, setText]=useState([]);
+
     useEffect(() => {
         setLoading(true);
         fetch(`${API}/db`)
@@ -18,43 +20,42 @@ export default function Navigation(){
                 setFundations(data.fundations);
                 setOrganizations(data.organizations);
                 setLocals(data.locals);
-                setLoading(false);
+                setText(data.nowy);
                 setList(data.fundations);
+                setCurrentText(text[0]);
+                setLoading(false);
             })
             .catch(error => {
                 console.log(error);
             });
     }, []);
 
-
-
-    const [text, setText]=useState("W naszej bazie znajdziesz listę zweryfikowanych Fundacji,\n z którymi współpracujemy. " +
-        "Możesz sprawdzić czym się zajmują,\n komu pomagają i czego potrzebują.");
-
     const [currentPage, setCurrentPage]=useState(1);
-    const [listItemsPerPage, setListItemsPerPage] = useState(3);
+
+    const [listItemsPerPage] = useState(3);
 // Get current list
     const indexOfLastListItem = currentPage * listItemsPerPage;
     const indexOfFirstListItem = indexOfLastListItem - listItemsPerPage;
     const currentListItem = list.slice(indexOfFirstListItem, indexOfLastListItem);
+    const fundationText = text[0];
+    const organizationText = text[1];
+    const localText = text[2];
+    console.log(fundationText);
+    const [currentText, setCurrentText] = useState(fundationText);
 
     const handleNav = e => {
         e.preventDefault();
 
 
         if (parseInt(e.target.id) === 1) {
-
-            setText("W naszej bazie znajdziesz listę zweryfikowanych Fundacji, \n z którymi współpracujemy. " +
-                "Możesz sprawdzić czym się zajmują, \n komu pomagają i czego potrzebują.");
+            setCurrentText(fundationText);
             setList(fundations);
 
         } else if (parseInt(e.target.id) === 2) {
-            setText("Lorem ipsum dolor sit amet, consectetur adipiscing elit, \n sed do eiusmod tempor incididunt " +
-                "ut labore et dolore magna aliqua. \n Ut enim ad minim veniam, quis nostrud exercitation.");
+            setCurrentText(organizationText);
             setList(organizations);
         } else {
-            setText("Lorem ipsum dolor sit amet, consectetur adipiscing elit, \n sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
-                "\n Ut enim ad minim veniam, quis nostrud exercitation.");
+            setCurrentText(localText)
             setList(locals);
         }};
 
@@ -74,7 +75,7 @@ export default function Navigation(){
             <li onClick={handleNav} id={3} className={"menu_down"}>Lokalnym <br/> zbiórkom</li>
         </ul>
         <div className={"section_one"}>
-            <Paragraf text={text}/>
+            <Paragraf text={currentText}/>
             <ListPagination list={currentListItem} loading={loading}/>
             { (list.length === listItemsPerPage) ? <div/> : <Pages listItemsPerPage={listItemsPerPage} totalListItems={list.length} paginate={paginate}/> }
         </div>

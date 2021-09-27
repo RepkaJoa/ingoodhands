@@ -1,0 +1,47 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 90%;
+}
+.label {
+  font-size: 0.6rem;
+  font-weight: bold;
+}
+.input {
+
+  width: 80%;
+  color: $color-grey;
+  margin-top: 10px;
+  justify-content: space-between;
+  border: none;
+  border-bottom: 2px solid $color-grey;
+  margin-bottom: 10px;
+}
+.textarea {
+  width: 80%;
+  height: 150px;
+
+  }
+.form_button {
+  width: 5rem;
+  background-color: white;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $font-base;
+  text-align: center;
+  color: $color-grey;
+  border: 1px solid $color-grey;
+  margin-left: 75%;
+  margin-top: 2%;
+}
+input::placeholder {
+  white-space: pre-line;
+}
+.error {
+  color:red;
+  font-size: 0.6rem;
+  font-weight: bold;
+}

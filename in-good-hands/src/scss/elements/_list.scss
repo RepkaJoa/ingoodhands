@@ -1,15 +1,16 @@
 .list{
   width: 100%;
-
 }
 .list_items {
-  width: 100%;
+  width: 80%;
   color: $color-grey;
   position: relative;
+  margin-top: 10px;
+  justify-content: space-between;
 
   &::after{
     content: "";
-    width: 50%;
+    width: 100%;
     //margin-left: 36%;
     height: 1px;
     border-bottom: 1px solid $color-grey;
@@ -19,18 +20,23 @@
 
 }
 .space {
-  margin-left:38%;
+  width: 10px;
   height: 10px;
 }
 .name_text {
   font-size: 1rem;
+  width: 100%;
+  text-align: left;
 }
 .description_text {
   font-size: 0.5rem;
 }
-paragraf_text {
+.items_text {
+  font-size: 0.8rem;
+  text-align: left;
+}
+.paragraf_text {
   width: 60%;
-  white-space: pre-line;
   font-size: 1rem;
   text-align: center;
   margin-left: 10%;

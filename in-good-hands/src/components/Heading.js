@@ -5,6 +5,7 @@ export default function Heading({head_text}){
 
         <div className={"section_heading"}>
             <div className={"heading"}>{head_text}</div>
+            <div className={"decoration"}> </div>
         </div>
     </>
 }

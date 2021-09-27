@@ -1,0 +1,16 @@
+.logout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
+  margin-right: 30%;
+  margin-left: 30%;
+  margin-top: 5%;
+  &_button {
+    font-size: 0.8rem;
+    width: 30%;
+    background-color: white;
+    font-family: $font-base;
+    border: 1px solid $color-grey;
+  }
+}

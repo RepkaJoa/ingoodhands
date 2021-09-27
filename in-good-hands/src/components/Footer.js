@@ -6,7 +6,7 @@ export default function Footer(){
     return <>
 <div className={"footer section_row space_between"}>
     <span className={"center"}> Copyright by Coders Lab </span>
-    <div className={"logo section_row"}>
+    <div className={"logo section_row space_between"}>
         <img src={f_logo}/>
         <img src={i_logo}/>
     </div>
