@@ -8,9 +8,11 @@ export default function SectionHead(){
     return <>
     <div id={"start"} className={"section_row container"}>
         <HeadBackground/>
-        <div className={"header_info"}>
+        <div className={"head"}>
+            <div className={"head_navi"}>
             <HeadNaviUp/>
             <HeadNaviDown/>
+            </div>
             <HeadMain/>
         </div>
     </div>

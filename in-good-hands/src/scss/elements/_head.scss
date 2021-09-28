@@ -1,0 +1,12 @@
+
+.head {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-right: 10%;
+  &_navi{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+}

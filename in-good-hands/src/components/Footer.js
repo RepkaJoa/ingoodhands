@@ -4,11 +4,14 @@ import i_logo from "../assets/Instagram.png";
 export default function Footer(){
 
     return <>
-<div className={"footer section_row space_between"}>
+<div className={"footer section_row center space_between"}>
+    <span className={"space"}/>
     <span className={"center"}> Copyright by Coders Lab </span>
     <div className={"logo section_row space_between"}>
-        <img src={f_logo}/>
-        <img src={i_logo}/>
+       <a href={"http://facebook.com"} className={"link"}> <img src={f_logo}/></a>
+        <span className={"space"}/>
+        <span className={"space"}/>
+        <a href={"https://www.instagram.com/"} className={"link"}> <img src={i_logo}/></a>
     </div>
 </div>
     </>

@@ -1,16 +1,16 @@
 import React from "react";
-import Heading from "./Heading";
-import Button from "./Button";
+
 import HeadNaviUp from "./HeadNaviUp";
 import HeadNaviDown from "./HeadNaviDown";
 import {Link} from "react-router-dom";
+import FourHeading from "./FourHeading";
 
 export default function Register (){
     return <>
         <HeadNaviUp/>
         <HeadNaviDown/>
         <div className={"login"}>
-            <Heading head_text={"Załóż konto"}/>
+            <FourHeading head_text={"Załóż konto"}/>
             <div className={"login_box"}>
                 <form className={"section_column login_form"}>
                     <label> Email</label><br/>

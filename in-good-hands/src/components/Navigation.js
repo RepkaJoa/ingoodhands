@@ -69,10 +69,10 @@ export default function Navigation(){
 
     return <>
     <div className={"section_column"}>
-        <ul  className={"section_row center"}>
-            <li onClick={handleNav} id={1} className={"menu_down"}>Fundacjom</li>
-            <li onClick={handleNav} id={2} className={"menu_down"}>Organizacjom <br/> pozarządowym</li>
-            <li onClick={handleNav} id={3} className={"menu_down"}>Lokalnym <br/> zbiórkom</li>
+        <ul  className={"section_row center margin_left"}>
+            <li onClick={handleNav} id={1} className={"menu_down"} >Fundacjom</li>
+            <li onClick={handleNav} id={2} className={"menu_down"} style={{marginLeft:"5%"}}>Organizacjom <br/> pozarządowym</li>
+            <li onClick={handleNav} id={3} className={"menu_down "} style={{marginLeft:"5%"}}>Lokalnym <br/> zbiórkom</li>
         </ul>
         <div className={"section_one"}>
             <Paragraf text={currentText}/>

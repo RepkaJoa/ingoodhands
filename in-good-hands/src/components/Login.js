@@ -1,7 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import Heading from "./Heading";
-import Button from "./Button";
+import FourHeading from "./FourHeading";
 import HeadNaviDown from "./HeadNaviDown";
 import HeadNaviUp from "./HeadNaviUp";
 
@@ -10,7 +9,7 @@ export default function Login (){
         <HeadNaviUp/>
         <HeadNaviDown/>
         <div className={"login"}>
-            <Heading head_text={"Zaloguj się"}/>
+            <FourHeading head_text={"Zaloguj się"}/>
         <div className={"login_box"}>
             <form className={"section_column login_form"}>
                 <label> Email</label><br/>
