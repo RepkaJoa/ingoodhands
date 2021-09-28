@@ -16,6 +16,7 @@ export default function SectionContact(){
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
         const isValid = formValidation();
         if (isValid){
             // send this data
@@ -38,15 +39,14 @@ export default function SectionContact(){
                 .then(response => response.json())
                 .then(data => {
                     console.log(data);
+
                 })
                 .catch(error => {
                     console.log(error);
                 });
-            setName("");
-            setEmail("");
-            setText("")
 
         }
+
     }
     const formValidation = () => {
     const nameErr = {};
@@ -55,7 +55,7 @@ export default function SectionContact(){
     let isValid = true;
 
 
-    if (name.trim().length < 5 || name.length == 0){
+    if (name.trim().length < 4 || name.length === 0){
         nameErr.Short = "Podane imię jest nieprawidłowe!";
         isValid = false;
     }
@@ -63,14 +63,14 @@ export default function SectionContact(){
         nameErr.MoreThenOne = "Podane imię jest nieprawidłowe!";
         isValid = false;
     }
-    if (text.trim().length < 120 || text.trim().length == 0) {
+    if (text.trim().length < 120 || text.trim().length === 0) {
         textErr.ToShort = "Wiadomość musi mieć co najmniej 120 znaków";
         isValid = false;
         }
 
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-    if (re.test(String(email).toLowerCase()) == false || email.length == 0){
+    if (re.test(String(email).toLowerCase()) === false || email.length === 0){
          emailErr.Wrong = "Podany Email jest nieprawidłowy";
          isValid = false;
      }
@@ -83,6 +83,7 @@ export default function SectionContact(){
 
 
     }
+
     return <>
         <div id={"contact"} className={"section_contact section_row"}>
 

@@ -1,6 +1,4 @@
 import React from "react";
-import Heading from "./Heading";
-import Button from "./Button";
 import FourSteps from "./FourSteps";
 import {Link} from "react-router-dom";
 import FourHeading from "./FourHeading";

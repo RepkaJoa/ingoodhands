@@ -1,6 +1,6 @@
 import React from "react";
 import FourHeading from "./FourHeading.js";
-import signature from "../assets/Signature.svg"
+
 
 export default function SectionAbout(){
 

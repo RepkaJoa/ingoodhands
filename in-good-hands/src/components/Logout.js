@@ -1,5 +1,4 @@
 import Heading from "./Heading";
-import Button from "./Button";
 import HeadNaviUp from "./HeadNaviUp";
 import HeadNaviDown from "./HeadNaviDown";
 

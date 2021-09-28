@@ -4,7 +4,7 @@ export default function Step({text, description, icon }){
 
     return <>
     <div className={"step"}>
-        <img className={"step_img"} src={icon}/>
+        <img className={"step_img"} src={icon} alt={"ikona"}/>
         <h2 className={"step_header"}>{text}</h2>
         <p className={"step_description"}>{description}</p>
     </div>
