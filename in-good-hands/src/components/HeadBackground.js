@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function HeadBackground(){
-    return <div className={"header_background"}>
+    return <div className={"head_background"}>
 
     </div>
 }

@@ -10,6 +10,7 @@ import Footer from "./Footer";
 
 export default function Home (){
     return <>
+        <div className={"container"}>
         <SectionHead/>
         <SectionYellow/>
         <SectionFourSteps/>
@@ -17,5 +18,6 @@ export default function Home (){
         <SectionHelp/>
         <SectionContact/>
         <Footer/>
+        </div>
     </>
 }

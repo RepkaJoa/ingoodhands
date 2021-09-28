@@ -21,6 +21,8 @@
 .textarea {
   width: 80%;
   height: 150px;
+  border: none;
+  border-bottom: 2px solid $color-grey;
 
   }
 .form_button {
